@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VouchAI - Find Creators</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="main-container">
+        
+
+        <div class="logo-box">
+            
+            <h1 class="logo-text">VouchAI</h1>
+            
+            <div class="cube3d">
+      <div class="face front"><i class="fab fa-instagram"></i></div>
+      <div class="face back"><i class="fab fa-youtube"></i></div>
+      <div class="face right"><i class="fab fa-twitter"></i></div>
+      <div class="face left"><i class="fab fa-tiktok"></i></div>
+      <div class="face top"><i class="fab fa-facebook"></i></div>
+      <div class="face bottom"><i class="fab fa-linkedin"></i></div>
+    </div>
+            <p class="logo-subtext">Find the right creator for your brand</p>
+        </div>
+
+        
+
+        <div class="form-card">
+            <div class="form-group">
+                <label for="brandName" class="field-label">Brand Name</label>
+                <input type="text" id="brandName" placeholder="Enter your brand name (e.g. Nykaa)" class="input-box">
+            </div>
+           
+
+
+            <div class="form-group">
+                <label for="niche" class="field-label">Niche / Category</label>
+                <select id="niche" class="dropdown-box">
+                    <option value="" disabled selected>Select Niche</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="fitness">Fitness</option>
+                    <option value="food">Food</option>
+                    <option value="tech">Tech</option>
+                    <option value="fashion">Fashion</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget" class="field-label">Budget (in Rupees)</label>
+                <input type="number" id="budget" placeholder="Budget in rupees" class="input-box">
+            </div>
+
+            <div class="form-group">
+                <label for="language" class="field-label">Target Language</label>
+                <select id="language" class="dropdown-box">
+                    <option value="" disabled selected>Select Language</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="hinglish">Hinglish</option>
+                </select>
+            </div>
+
+            <button onclick="submitForm()" class="submit-button">
+
+                
+                Find Creators
+            </button><br><br><p style="color: black;font-style: italic;font-size: medium;font-weight: 700;">*Click on Find Creators </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
