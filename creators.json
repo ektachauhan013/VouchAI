@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Riya",
+        "followers": 50000,
+        "engagement_rate": 5.2,
+        "niche": "fashion"
+    },
+
+    {
+        "name": "Aman",
+        "followers": 2000000,
+        "engagement_rate": 0.5,
+        "niche": "fashion"
+    },
+
+    {
+        "name": "Neha",
+        "followers": 300000,
+        "engagement_rate": 3.8,
+        "niche": "skincare"
+    }
+]
