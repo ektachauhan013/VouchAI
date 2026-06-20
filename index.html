@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Identity Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:50px;color:beige">VouchAI</h1>
+    <div class="container">
+        <header class="header">
+            <div class="brand">
+                <h2 style="color: black;font-family:'Times New Roman', Times, serif;">Identity</h2>
+                <div class="group">
+                    <label style="color: black;">Company Name</label>
+                    <input type="text" id="company" class="input" placeholder="Enter company name">
+                </div>
+                <div class="group">
+                    <label style="color: black;">Corporate Niche</label>
+                    <select id="niche" class="select">
+                        <option>Beauty</option>
+                        <option>Fitness</option>
+                        <option>Tech</option>
+                        <option>Food</option>
+                    </select>
+                </div>
+            </div>
+            <div class="portal" >
+                <h2 style="color: black;font-family: 'Times New Roman', Times, serif;">Credentials</h2>
+                <div class="group">
+                    <label>Email Address</label>
+                    <div class="verify-box">
+                        <input type="email" id="email" class="input" placeholder="name@company.com">
+                        
+                    </div>
+                   
+                </div>
+                <div class="group">
+                    <label>Password</label>
+                    <input type="password" class="input" placeholder="Create password">
+                </div>
+            </div>
+        </header>
+        <button type="button" id="next-page" class="btn-main">Verify</button>
+    </div>
+  
+</div>
+
+
+    <script src="page1.js"></script>
+</body>
+</html>
