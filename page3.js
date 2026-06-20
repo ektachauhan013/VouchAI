@@ -1,80 +1,60 @@
-const creators = [
-    { name: "Aarav Sharma", score: 12, platform: "YouTube" },
-    { name: "Diya Patel", score: 25, platform: "Instagram" },
-    { name: "Kabir Singh", score: 45, platform: "Instagram" },
-    { name: "Riya Verma", score: 75, platform: "YouTube" },
-    { name: "Ananya Das", score: 18, platform: "Instagram" }
-];
-
-const stylesData = {
-    educational: {
-        cue: "Camera macro focus on formulation elements.",
-        voiceover: "Let us break down exactly what ingredients go into this build.",
-        audio: "Trending Audio: TechSynth Pro (Used in 85k videos)",
-        tags: ["#FormulationCheck", "#DeepDive", "#TechSpecs", "#Unboxing", "#HowTo"],
-        hook: "Don't buy a laptop in 2026 until you see this..."
-    },
-    lifestyle: {
-        cue: "Wide tracking angle during morning routine walkthrough.",
-        voiceover: "Spending the morning reorganizing my workspace structure.",
-        audio: "Trending Audio: Sunrise Lo-Fi Vibes (Used in 210k videos)",
-        tags: ["#VlogLife", "#DailyRoutine", "#AestheticVlog", "#Haul", "#Lifestyle"],
-        hook: "This single habit altered how I plan my entire day."
-    },
-    aesthetic: {
-        cue: "Tight static shot with sharp ASMR sound feedback.",
-        voiceover: "The textural feedback of this structural layout is unmatched.",
-        audio: "Trending Audio: Nexaverse Beats (Used in 140k reels this week)",
-        tags: ["#CleanBeauty", "#GlowUp", "#SkincareRoutine", "#MinimalStyle", "#ASMR"],
-        hook: "Stop applying eyeliner in this way and ruining your whole eyemakeup (Visual hook: Applying eyeliner and eyeshadow for complete look)."
-    }
-};
-
 window.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('grid');
-    const selectedStyle = localStorage.getItem('selectedStyle') || 'educational';
+    const selectedCreatorName = localStorage.getItem('selectedCreatorName');
+    const globalScript = localStorage.getItem('globalScriptOutput');
+    const rawTrends = localStorage.getItem('globalTrendsOutput');
+
+    // System bounding checkpoint to lock secure flow operations
+    if (!selectedCreatorName || !globalScript) {
+        alert('Please pick a specific matching creator profile from the pipeline dashboard first.');
+        window.location.href = 'campaign.html';
+        return;
+    }
+
+    const trendData = rawTrends ? JSON.parse(rawTrends) : null;
+
+    // Inject dynamic heading naming details mapping chosen candidate profile metrics
+    const titleHeader = document.getElementById('script-title');
+    if (titleHeader) {
+        titleHeader.innerText = `Custom Script for ${selectedCreatorName}`;
+    }
+
+    const voiceoverContainer = document.getElementById('voiceover');
+    const cueContainer = document.getElementById('cue');
+
+    if (voiceoverContainer) {
+        voiceoverContainer.innerText = globalScript;
+    }
     
-    creators.forEach(creator => {
-        let statusClass = 'badge-green';
-        let statusText = 'Clear';
-        
-        if (creator.score > 30 && creator.score <= 60) {
-            statusClass = 'badge-yellow';
-            statusText = 'Caution';
-        } else if (creator.score > 60) {
-            statusClass = 'badge-red';
-            statusText = 'Blocked';
+    if (cueContainer) {
+        const creatorStyleText = localStorage.getItem('selectedCreatorStyle') || 'natural delivery style';
+        cueContainer.innerText = `Visual & Pacing Cue: Delivery matches "${creatorStyleText}" creative formatting guidelines closely.`;
+    }
+
+    // Injects matching trend parameters telemetry tracking points returned via FastAPI python pipelines
+    if (trendData) {
+        const audioBox = document.getElementById('audio');
+        if (audioBox) {
+            audioBox.innerText = `${trendData.recommended_audio || 'Trending Audio Track - Generic Mix'}`;
         }
 
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <h3>${creator.name}</h3>
-            <p>Platform: ${creator.platform}</p>
-            <p>Fraud Score: ${creator.score}</p>
-            <span class="badge ${statusClass}">${statusText}</span>
-        `;
-        
-        card.addEventListener('click', () => {
-            document.getElementById('voiceover').innerText = `[${creator.name}] ${stylesData[selectedStyle].voiceover}`;
-        });
-        grid.appendChild(card);
-    });
+        const hookBox = document.getElementById('hook');
+        if (hookBox) {
+            hookBox.innerText = `"${trendData.optimal_hook || 'Hook: Pay attention to this core insight statement before starting!'}"`;
+        }
 
-    // Populate trend metrics
-    const data = stylesData[selectedStyle];
-    document.getElementById('cue').innerText = data.cue;
-    document.getElementById('voiceover').innerText = data.voiceover;
-    document.getElementById('audio').innerText = data.audio;
-    document.getElementById('hook').innerText = data.hook;
-    
-    const tagCloud = document.getElementById('hashtags');
-    data.tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'tag';
-        span.innerText = tag;
-        tagCloud.appendChild(span);
-    });
+        const tagCloud = document.getElementById('hashtags');
+        if (tagCloud) {
+            tagCloud.innerHTML = ''; 
+            const tagsList = trendData.hashtag_cloud || ['#Trending', '#InfluencerMarketing'];
+            
+            tagsList.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = tag.startsWith('#') ? tag : `#${tag}`;
+                tagCloud.appendChild(span);
+            });
+        }
+    }
 });
 
 const toggles = document.querySelectorAll('.toggle');

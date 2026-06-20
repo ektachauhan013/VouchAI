@@ -3,57 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Campaign Parameters</title>
+    <title>VouchAI - Campaign Settings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <section class="parameters">
-            <h2 style="color: black;"> Campaign Parameters </h2>
-            <form id="form">
-                <div class="group">
-                    <label>Budget Range Threshold</label>
-                    <input type="range" class="slider" min="1000" max="50000" step="1000" value="10000">
-                </div>
-                <div class="group">
-                    <label>Target Language</label>
-                    <select class="select">
-                        <option>English</option>
-                        <option>Hindi</option>
-                        <option>Hinglish</option>
-                        <option>Regional</option>
-                    </select>
-                </div>
-                <div class="group">
-                    <label>Target Location</label>
-                    <input type="text" class="input" placeholder="e.g. Delhi, Mumbai, Bangalore">
-                </div>
-                <div class="group">
-                    <label>Content Style Direction</label>
-                    <select id="style-select" class="select">
-                        <option value="educational">Educational / Breakdown Style</option>
-                        <option value="lifestyle">Lifestyle / Vlogs</option>
-                        <option value="aesthetic">Aesthetic / Cinematic</option>
-                    </select>
-                </div>
-                <button type="button" id="analyze" class="btn-main">Analyze and Audit Creators</button>
-            </form>
-        </section>
-    </div>
-    <!-- Cyber-Premium VouchAI Theme Badge -->
-<div class="metric-container">
-    <div class="metric-card">
-        <div class="glow-border"></div>
-        <div class="pulse-ring"></div>
-        <div class="card-content">
-            <span class="trend-icon">✦</span>
-            <div class="text-group">
-                <span class="label">Find  the right creator for your brand</span>
+    <div class="campaign-page-wrapper">
+        <div class="campaign-container">
+            <div class="filter-panel">
+                <h2>Campaign Parameters</h2>
                 
+                <div class="control-group">
+                    <label>Budget Range Threshold</label>
+                    <input type="range" class="slider" min="1000" max="50000" step="500" value="10000">
+                </div>
+
+                <div class="control-group">
+                    <label for="language-select">Target Language</label>
+                    <select id="language-select">
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="hinglish">Hinglish</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Target Location</label>
+                    <input type="text" id="location" placeholder="e.g. Delhi, Mumbai, Bangalore">
+                </div>
+
+                <div class="control-group">
+                    <label for="style-select">Content Style Direction</label>
+                    <select id="style-select">
+                        <option value="educational">educational</option>
+                        <option value="lifestyle">lifestyle</option>
+                        <option value="aesthetic">aesthetic</option>
+                    </select>
+                </div>
+
+                <button id="analyze" class="btn-submit">Analyze and Audit Creators</button>
+            </div>
+
+            <div id="results-workspace" class="results-workspace" style="display: none;">
+                <div class="results-header">
+                    <span class="sparkle-icon">✦</span>
+                    <h3 id="results-instruction" style="display: none;">Click on a creator's card below to choose them and view their custom script profile</h3>
+                </div>
+                
+                <div id="grid" class="creator-grid">
+                    </div>
             </div>
         </div>
     </div>
-</div>
     <script src="page2.js"></script>
 </body>
 </html>

@@ -3,52 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Audit Board</title>
+    <title>VouchAI - Dynamic Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <section class="board">
-            <h2 style="color: black;">Live Audit Report Board</h2>
-            <div id="grid" class="grid">
-                </div>
-        </section>
-
-        <section class="details">
-            <div class="preview">
-                <h2 style="color:black">Dynamic AI Script Preview</h2>
-                <div class="toggles">
+    <div class="dashboard-page-wrapper">
+        <div class="dashboard-wrapper">
+            
+            <div class="left-panel">
+                <h2 id="script-title">AI Script Framework</h2>
+                
+                <div class="tone-toggle-bar">
                     <button class="toggle active">Gen-Z Humor</button>
                     <button class="toggle">Professional</button>
                     <button class="toggle">Casual Vlog</button>
                 </div>
-                <div class="prompter">
-                    <div class="phone">
-                        <div class="screen">
-                            <p><strong>Visual Cue:</strong> <span id="cue">Camera pans to product close-up.</span></p>
-                            <p><strong>Voiceover:</strong> <span id="voiceover">Check this out before it sells out.</span></p>
+
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="script-content">
+                            <p class="cue-style" id="cue">Analyzing style direction constraints...</p>
+                            <div class="voiceover-body" id="voiceover">
+                                Generating your tailored script framework pipeline...
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="analytics">
+            <div class="right-panel">
                 <h2>Trend Analytics Engine</h2>
-                <div class="metric">
+
+                <div class="analytics-card">
                     <h3>Recommended Audio Track</h3>
-                    <p id="audio">Trending Audio</p>
+                    <p id="audio" class="metric-highlight">Processing acoustic data...</p>
                 </div>
-                <div class="metric">
+
+                <div class="analytics-card">
                     <h3>Strategic Hashtag Cloud</h3>
-                    <div id="hashtags" class="tags">
+                    <div id="hashtags" class="tag-cloud-container">
                         </div>
                 </div>
-                <div class="metric">
+
+                <div class="analytics-card">
                     <h3>Optimal Hook Strategy</h3>
-                    <p id="hook" class="quote">Hook strategy statement.</p>
+                    <blockquote id="hook" class="hook-quote">
+                        Extracting semantic script hooks...
+                    </blockquote>
                 </div>
             </div>
-        </section>
+            
+        </div>
     </div>
     <script src="page3.js"></script>
 </body>
