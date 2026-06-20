@@ -1,3 +1,19 @@
+// Dynamic Slider Value Real-time Updater
+const budgetSlider = document.getElementById('budget-slider');
+const budgetDisplay = document.getElementById('budget-display');
+
+if (budgetSlider && budgetDisplay) {
+    // Function to set text in the mandatory format: ( min - slider value )
+    const updateSliderDisplay = () => {
+        budgetDisplay.innerText = `(${budgetSlider.min} - ${budgetSlider.value})`;
+    };
+
+    // Listen for drag interactions to update immediately
+    budgetSlider.addEventListener('input', updateSliderDisplay);
+    // Initialize current default threshold visual layout on page render
+    updateSliderDisplay();
+}
+
 document.getElementById('analyze').addEventListener('click', async function(e) {
     e.preventDefault();
 
@@ -8,7 +24,6 @@ document.getElementById('analyze').addEventListener('click', async function(e) {
     const languageElement = document.getElementById('language-select');
     const selectedLanguage = languageElement ? languageElement.value.toLowerCase() : 'english';
     
-    const budgetSlider = document.querySelector('.slider');
     const selectedBudget = budgetSlider ? parseFloat(budgetSlider.value) : 10000;
 
     const companyName = localStorage.getItem('companyName') || 'My Brand';

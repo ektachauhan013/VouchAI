@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VouchAI - Dynamic Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="dashboard-page-wrapper">
-        <div class="dashboard-wrapper">
+        <div class="dashboard-wrapper" style="display: flex; gap: 40px; align-items: flex-start; max-width: 1400px; margin: 0 auto; padding: 20px;">
             
-            <div class="left-panel">
-                <h2 id="script-title">AI Script Framework</h2>
+            <div class="left-panel" style="display: flex; flex-direction: column; align-items: flex-start; width: 55%;">
+                <h2 id="script-title" style="text-align: left; margin-bottom: 20px; white-space: nowrap; font-size: 28px;">Custom Script Framework</h2>
                 
-                <div class="tone-toggle-bar">
+                <div class="tone-toggle-bar" style="margin-bottom: 25px; display: flex; gap: 10px;">
                     <button class="toggle active">Gen-Z Humor</button>
                     <button class="toggle">Professional</button>
                     <button class="toggle">Casual Vlog</button>
                 </div>
 
-                <div class="phone-frame">
-                    <div class="phone-screen">
-                        <div class="script-content">
-                            <p class="cue-style" id="cue">Analyzing style direction constraints...</p>
-                            <div class="voiceover-body" id="voiceover">
+                <div class="phone-frame" style="margin-top: 5px; width: 100%; max-width: 440px; height: 680px; background: #1e1b29; border-radius: 36px; padding: 18px; box-shadow: 0 12px 40px rgba(0,0,0,0.5); border: 4px solid #2d2a3a;">
+                    <div class="phone-screen" style="width: 100%; height: 100%; background: #ffffff; border-radius: 24px; overflow-y: auto; padding: 25px; color: #111111; box-sizing: border-box;">
+                        <div class="script-content" style="font-family: 'Inter', sans-serif; line-height: 1.6;">
+                            <p class="cue-style" id="cue" style="text-align: left; background: #f1f0f7; padding: 15px; border-left: 4px solid #6c5ce7; border-radius: 6px; font-size: 14px; margin-bottom: 20px; color: #555555; font-style: italic;">
+                                Analyzing style direction constraints...
+                            </p>
+                            <div class="voiceover-body" id="voiceover" style="text-align: left; font-size: 15px; color: #2d3436; white-space: pre-wrap;">
                                 Generating your tailored script framework pipeline...
                             </div>
                         </div>
@@ -31,25 +34,33 @@
                 </div>
             </div>
 
-            <div class="right-panel">
-                <h2>Trend Analytics Engine</h2>
+            <div class="right-panel" style="width: 45%; display: flex; flex-direction: column; justify-content: space-between; min-height: 750px;">
+                <div>
+                    <h2 style="font-size: 28px; margin-bottom: 20px;">Trend Analytics Engine</h2>
 
-                <div class="analytics-card">
-                    <h3>Recommended Audio Track</h3>
-                    <p id="audio" class="metric-highlight">Processing acoustic data...</p>
-                </div>
+                    <div class="analytics-card" style="margin-bottom: 20px;">
+                        <h3>Recommended Audio Track</h3>
+                        <p id="audio" class="metric-highlight">Processing acoustic data...</p>
+                    </div>
 
-                <div class="analytics-card">
-                    <h3>Strategic Hashtag Cloud</h3>
-                    <div id="hashtags" class="tag-cloud-container">
+                    <div class="analytics-card" style="margin-bottom: 20px;">
+                        <h3>Strategic Hashtag Cloud</h3>
+                        <div id="hashtags" class="tag-cloud-container" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 0;">
                         </div>
+                    </div>
+
+                    <div class="analytics-card" style="margin-bottom: 20px;">
+                        <h3>Optimal Hook Strategy</h3>
+                        <blockquote id="hook" class="hook-quote">
+                            Extracting semantic script hooks...
+                        </blockquote>
+                    </div>
                 </div>
 
-                <div class="analytics-card">
-                    <h3>Optimal Hook Strategy</h3>
-                    <blockquote id="hook" class="hook-quote">
-                        Extracting semantic script hooks...
-                    </blockquote>
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: auto; padding-top: 30px;">
+                    <button id="download-script-btn" class="btn-submit" style="width: 100%; max-width: 360px; margin-bottom: 15px; background: #6c5ce7; font-weight: bold; padding: 14px; font-size: 15px; border-radius: 12px; border: none; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);">
+                        📥 Download Script & Analytics Report
+                    </button>
                 </div>
             </div>
             

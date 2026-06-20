@@ -13,8 +13,12 @@
                 <h2>Campaign Parameters</h2>
                 
                 <div class="control-group">
-                    <label>Budget Range Threshold</label>
-                    <input type="range" class="slider" min="1000" max="50000" step="500" value="10000">
+                    <!-- Added id to span to insert dynamic range display marked in edited-image.png -->
+                    <label style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        Budget Range Threshold 
+                        <span id="budget-display" style="font-weight: bold; opacity: 0.9;">(1000 - 10000)</span>
+                    </label>
+                    <input type="range" id="budget-slider" class="slider" min="1000" max="50000" step="500" value="10000">
                 </div>
 
                 <div class="control-group">
@@ -37,6 +41,9 @@
                         <option value="educational">educational</option>
                         <option value="lifestyle">lifestyle</option>
                         <option value="aesthetic">aesthetic</option>
+                        <option value="analytical">analytical</option>
+                        <option value="culinary">culinary</option>
+                        <option value="interactive">interactive</option>
                     </select>
                 </div>
 
@@ -50,7 +57,7 @@
                 </div>
                 
                 <div id="grid" class="creator-grid">
-                    </div>
+                </div>
             </div>
         </div>
     </div>
